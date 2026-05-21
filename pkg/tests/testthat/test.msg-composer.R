@@ -80,3 +80,6 @@ test_that("msgcomposer/composer_signature_validation_directly", {
   })
 })
 
+test_that("loginfo handles Date objects without error", {
+    expect_no_error(loginfo(as.Date("2022-01-01")))
+})

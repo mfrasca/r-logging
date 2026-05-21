@@ -186,6 +186,6 @@ defaultMsgCompose <- function(msg, ...) {
     !(matched_call_names %in% c(setdiff(formal_names, "...")))
 
   label <- lapply(matched_call[is_output_param], deparse)
-  msg <- sprintf("%s: %s", label, c(msg, optargs))
+  msg <- sprintf("%s: %s", label, c(as.character(msg), optargs))
   return(msg)
 }
