@@ -46,7 +46,7 @@ The web pages for this package on r-forge are kept decently up to date
 and contain a usable tutorial. Check the references.
 }
 \references{
-the python logging module: \url{http://docs.python.org/library/logging.html}\cr
+the python logging module: \url{https://docs.python.org/3/library/logging.html}\cr
 this package at github: \url{https://github.com/WLOGSolutions/r-logging/}
 }
 \keyword{package}
