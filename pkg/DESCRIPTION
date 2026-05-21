@@ -1,9 +1,9 @@
 Package: logging
-Version: 0.10-108
+Version: 0.10-109
 Title: R Logging Package
 Authors@R: c(
-    person("Mario", "Frasca", email = "mariotomo@gmail.com", role = c("aut")),
-    person("Walerian", "Sokolowski", email = "r-logging@wlogsolutions.com", role = c("cre"))
+    person("Mario", "Frasca", email = "mariotomo@gmail.com", role = c("aut", "cre")),
+    person("Walerian", "Sokolowski", email = "r-logging@wlogsolutions.com", role = c("aut"))
     )
 Description: Pure R implementation of the ubiquitous log4j package. It offers hierarchic 
   loggers, multiple handlers per logger, level based filtering, space handling in messages 
