@@ -32,6 +32,8 @@ jobs:
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
+        working-directory: pkg
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--as-cran", error_on = "error")
         shell: Rscript {0}
+        working-directory: pkg
