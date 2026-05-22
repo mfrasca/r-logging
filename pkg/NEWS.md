@@ -1,3 +1,11 @@
+1.0-0 (2026-05-xx)
+  - Resumed maintainership (original author Mario Frasca)
+  - Fixed bug: non-character messages (e.g. Date) now log correctly
+  - Version 1.0 marks the package as stable; versioning henceforth follows
+    major.minor-patch where patch is for administrative/documentation fixes
+    and minor for bug fixes and new features
+  - Added GitHub Actions workflows for continuous integration (R-CMD-check)
+
 # logging 0.10-108 (2019-07-14)
   * issue #4: logged do not raise exception if formatting message contains %F
     markers and not formatting arguments passed
@@ -27,4 +35,4 @@
     logReset.
   
 # logging 0.8-104 (2018-11-29)
-  * Maintener changed to Walerian Sokolowski
+  * Maintainer changed to Walerian Sokolowski

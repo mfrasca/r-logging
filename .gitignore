@@ -5,3 +5,6 @@
 pkg.Rcheck
 .Rproj.user
 report.xml
+/logging.Rcheck/
+/logging_*.tar.gz
+/pkg/tests/testthat/_problems/
