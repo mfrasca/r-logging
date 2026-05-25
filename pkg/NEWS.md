@@ -1,10 +1,13 @@
-1.0-0 (2026-05-xx)
-  - Resumed maintainership (original author Mario Frasca)
-  - Fixed bug: non-character messages (e.g. Date) now log correctly
+# logging 1.0-0 (2026-05-25)
   - Version 1.0 marks the package as stable; versioning henceforth follows
     major.minor-patch where patch is for administrative/documentation fixes
     and minor for bug fixes and new features
-  - Added GitHub Actions workflows for continuous integration (R-CMD-check)
+  - Added GitHub Actions workflows for continuous integration.
+  - Published test coverage on coveralls.io
+
+# logging 0.10-111 (2026-05-21)
+  - Resumed maintainership (original author Mario Frasca)
+  - Fixed bug: non-character messages (e.g. Date) now log correctly
 
 # logging 0.10-108 (2019-07-14)
   * issue #4: logged do not raise exception if formatting message contains %F
