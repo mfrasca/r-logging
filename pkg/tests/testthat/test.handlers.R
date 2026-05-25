@@ -214,3 +214,33 @@ test_that("loggingToFile.oo", {
 
   succeed()
 })
+
+test_that("writeToConsole initializes color_msg as identity when color_output=FALSE", {
+  # addHandler invokes the action in 'dry' mode to initialize the handler.
+  # We verify that the resulting color_msg function is the identity,
+  # i.e. it returns the message unchanged regardless of level.
+  logReset()
+  basicConfig()
+  addHandler(writeToConsole, color_output = FALSE)
+  handler <- getHandler("writeToConsole")
+  expect_equal(handler$color_msg("test", "INFO"), "test")
+  expect_equal(handler$color_msg("test", "ERROR"), "test")
+})
+
+test_that("writeToConsole initializes color_msg with level-dependent coloring by default", {
+  # addHandler invokes the action in 'dry' mode to initialize the handler.
+  # With crayon available, color_msg should return ANSI-colored strings,
+  # different for different log levels.
+  skip_if_not_installed("crayon")
+  logReset()
+  basicConfig()
+  addHandler(writeToConsole)
+  handler <- getHandler("writeToConsole")
+  info_msg <- handler$color_msg("test", "INFO")
+  error_msg <- handler$color_msg("test", "ERROR")
+  expect_true(grepl("test", info_msg))
+  expect_true(grepl("test", error_msg))
+  expect_true(grepl("\033[", info_msg, fixed = TRUE))
+  expect_true(grepl("\033[", error_msg, fixed = TRUE))
+  expect_false(identical(info_msg, error_msg))
+})
