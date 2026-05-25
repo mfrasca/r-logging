@@ -26,18 +26,28 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           working-directory: pkg
-          extra-packages: any::covr
+          extra-packages: any::covr, any::xml2
           needs: coverage
 
-      - name: Test coverage
-        run: covr::coveralls(path = "pkg", service = "github")
+      - name: Generate coverage report (Cobertura)
+        run: |
+          cov <- covr::package_coverage(path = "pkg", quiet = FALSE)
+          print(cov)
+          covr::to_cobertura(cov, filename = "cobertura.xml")
         shell: Rscript {0}
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: cobertura.xml
+          format: cobertura
         env:
-          COVERALLS_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
       - name: Show testthat output
         if: always()
         run: |
           ## --------------------------------------------------------------------
-          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+          find "${{ runner.temp }}/package" -name "testthat.Rout*" -exec cat "{}" \; || true
         shell: bash
