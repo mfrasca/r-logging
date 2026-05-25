@@ -28,7 +28,23 @@ on [r-forge] (http://r-forge.r-project.org/).
 
 installation
 ============
-Simply call
+For the last released package:
 ```
-devtools::install_github("WLOGSolutions/r-logging/pkg")
+install.packages("logging")
 ```
+
+if you want the latest from github, you could do:
+```
+devtools::install_github("mfrasca/r-logging/pkg")
+```
+
+if you have cloned the github repository while your working directory
+was `BASE`, you may want to use your local, possibly altered copy:
+```
+devtools::install_local("BASE/r-logging/pkg")
+```
+
+
+<!-- badges: start -->
+[![Codecov test coverage](https://codecov.io/gh/mfrasca/r-logging/graph/badge.svg)](https://app.codecov.io/gh/mfrasca/r-logging)
+<!-- badges: end -->
