@@ -19,8 +19,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        r-version: ['release', 'devel']
+        include:
+          - os: ubuntu-latest
+            r-version: oldrel
+          - os: ubuntu-latest
+            r-version: release
+          - os: ubuntu-latest
+            r-version: devel
+          - os: macos-latest
+            r-version: release
+          - os: windows-latest
+            r-version: release
     steps:
       - uses: actions/checkout@v4
       - name: Install system dependencies
