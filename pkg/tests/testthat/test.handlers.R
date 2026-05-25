@@ -165,10 +165,13 @@ test_that("loggingToConsole", {
   logReset()
   basicConfig()
 
-  logdebug("test %d", 2)
-  loginfo("test %d", 2)
+  output <- capture.output({
+      logdebug("test %d", 2)
+      loginfo("test %d", 2)
+  })
 
-  succeed()
+  expect_true(any(grepl("test 2", output)))
+  expect_false(any(grepl("DEBUG", output)))
 })
 
 test_that("loggingToFile", {
