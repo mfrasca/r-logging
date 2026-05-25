@@ -19,7 +19,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           working-directory: pkg
-          extra-packages: any::covr, any::coveralls
+          extra-packages: any::covr
       - name: Test coverage
         run: covr::coveralls(path = "pkg", service = "github")
         shell: Rscript {0}
