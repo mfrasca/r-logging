@@ -1,6 +1,6 @@
-|       Travis       |   Total downloads   |      Downloads     |     CRAN version   |
-| :----------------: | :----------------: | :----------------: | :----------------: |
-| [![Travis build status](https://travis-ci.com/WLOGSolutions/r-logging.svg?branch=master)](https://travis-ci.com/WLOGSolutions/r-logging) | [![CRAN total downloads](http://cranlogs.r-pkg.org/badges/grand-total/logging)](http://cranlogs.r-pkg.org/badges/grand-total/logging)| [![CRAN downloads](https://cranlogs.r-pkg.org/badges/logging)](https://cranlogs.r-pkg.org/badges/logging)| [![CRAN version](http://www.r-pkg.org/badges/version/logging)](http://www.r-pkg.org/badges/version/logging)|
+|  R-CMD-check       |   Total downloads  |      Downloads     |     CRAN version   |    Coverage    |
+| :----------------: | :----------------: | :----------------: | :----------------: | :------------: |
+| [![R-CMD-check](https://github.com/mfrasca/r-logging/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mfrasca/r-logging/actions/workflows/R-CMD-check.yaml) | [![CRAN total downloads](http://cranlogs.r-pkg.org/badges/grand-total/logging)](http://cranlogs.r-pkg.org/badges/grand-total/logging)| [![CRAN downloads](https://cranlogs.r-pkg.org/badges/logging)](https://cranlogs.r-pkg.org/badges/logging)| [![CRAN version](http://www.r-pkg.org/badges/version/logging)](http://www.r-pkg.org/badges/version/logging)|[![Coverage Status](https://coveralls.io/repos/github/mfrasca/r-logging/badge.svg?branch=master)](https://coveralls.io/github/mfrasca/r-logging?branch=master)|
  
 r-logging
 =========
@@ -45,6 +45,3 @@ devtools::install_local("BASE/r-logging/pkg")
 ```
 
 
-<!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/mfrasca/r-logging/graph/badge.svg)](https://app.codecov.io/gh/mfrasca/r-logging)
-<!-- badges: end -->
