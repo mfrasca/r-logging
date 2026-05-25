@@ -33,7 +33,7 @@ jobs:
         run: covr::coveralls(path = "pkg", service = "github")
         shell: Rscript {0}
         env:
-          COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
       - name: Show testthat output
         if: always()
