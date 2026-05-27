@@ -115,7 +115,7 @@ levellog <- function(level, msg, ..., logger = "") {
 #' Set defaults and get the named logger.
 #'
 #' Make sure a logger with a specific name exists and return it as a
-#' \var{Logger} S4 object.  if not yet present, the logger will be created and
+#' \var{Logger} object.  If not yet present, the logger will be created and
 #' given the values specified in the \dots arguments.
 #'
 #' @param name The name of the logger
